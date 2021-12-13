@@ -14,18 +14,31 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Center(
-      child: GestureDetector(
-        //Função identificadora de toques
-        child: Text('Eh noix $counter vezes'),
-        onTap: () {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Home Page'),
+      ),
+      body: Center(
+        child: GestureDetector(
+          //Função identificadora de toques
+          child: Text('Eh noix $counter vezes'),
+          onTap: () {
+            setState(() {
+              //Função de atualizar state/rebuild
+              counter++;
+            });
+          },
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
           setState(() {
             //Função de atualizar state/rebuild
             counter++;
           });
         },
       ),
-    ));
+    );
   }
 }
