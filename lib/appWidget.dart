@@ -1,3 +1,4 @@
+import 'package:Prodesan/appController.dart';
 import 'package:flutter/material.dart';
 
 import 'homePage.dart';
@@ -8,9 +9,18 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData.light(),
-      home: HomePage(),
+    return AnimatedBuilder(
+      animation: AppController.instance,
+      builder: (BuildContext context, Widget? child) {
+        return MaterialApp(
+          theme: ThemeData(
+              primarySwatch: Colors.red,
+              brightness: AppController.instance.isDarkTheme
+                  ? Brightness.dark
+                  : Brightness.light),
+          home: HomePage(),
+        );
+      },
     );
   }
 }

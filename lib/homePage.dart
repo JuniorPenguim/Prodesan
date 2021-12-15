@@ -1,3 +1,4 @@
+import 'package:Prodesan/appController.dart';
 import 'package:flutter/material.dart';
 
 /////// STATEFUL WIDGET ///////
@@ -16,21 +17,19 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Page'),
+        centerTitle: true,
+        title: Text(
+          'Página Inicial',
+        ),
       ),
-      body: Align(
-          //Função para fazer multi render
-          alignment: Alignment.center,
-          child: Container(
-            height: 200,
-            width: 200,
-            color: Colors.black,
-            child: Container(
-              height: 100,
-              width: 100,
-              color: Colors.green,
-            ),
-          )),
+      body: Center(
+        child: Switch(
+          value: AppController.instance.isDarkTheme,
+          onChanged: (value) {
+            AppController.instance.changeTheme();
+          },
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
