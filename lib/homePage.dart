@@ -23,9 +23,16 @@ class HomePageState extends State<HomePage> {
         ),
         actions: [CustomSwitch()],
       ),
-      body: Center(
-        child: CustomSwitch(),
-      ),
+      body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Modo de visualização'),
+              CustomSwitch(),
+            ],
+          )),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
