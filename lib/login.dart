@@ -1,5 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:Prodesan/homePage.dart';
 import 'package:flutter/material.dart';
 
 class loginPage extends StatefulWidget {
@@ -45,7 +46,11 @@ class _loginPageState extends State<loginPage> {
               SizedBox(height: 15),
               ElevatedButton(
                 onPressed: () {
-                  if (email == 'fjumisan@gmail.com' && senha == '123') {}
+                  if (email == 'fjumisan@gmail.com' && senha == '123') {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) => HomePage()),
+                    );
+                  }
                 },
                 child: const Text('Entrar'),
               ),
