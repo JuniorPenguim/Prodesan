@@ -26,6 +26,14 @@ class _loginPageState extends State<loginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Container(
+                width: 500,
+                height: 100,
+                child: Image.asset('images/logoExtenso.png'),
+              ),
+              Container(
+                height: 10,
+              ),
               TextField(
                 onChanged: (text) {
                   email = text;
