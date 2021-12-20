@@ -19,7 +19,11 @@ class AppWidget extends StatelessWidget {
               brightness: AppController.instance.isDarkTheme
                   ? Brightness.dark
                   : Brightness.light),
-          home: loginPage(),
+          initialRoute: '/',
+          routes: {
+            '/': (context) => loginPage(),
+            '/home': (context) => HomePage(),
+          },
         );
       },
     );
