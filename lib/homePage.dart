@@ -31,6 +31,27 @@ class HomePageState extends State<HomePage> {
             children: [
               Text('Modo de visualização'),
               CustomSwitch(),
+              Container(height: 50),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 50,
+                    height: 50,
+                    color: Colors.black,
+                  ),
+                  Container(
+                    width: 50,
+                    height: 50,
+                    color: Colors.black,
+                  ),
+                  Container(
+                    width: 50,
+                    height: 50,
+                    color: Colors.black,
+                  )
+                ],
+              )
             ],
           )),
       floatingActionButton: FloatingActionButton(
