@@ -17,6 +17,7 @@ class _loginPageState extends State<loginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white70,
       body: SingleChildScrollView(
           child: SizedBox(
         width: MediaQuery.of(context).size.width,
@@ -27,12 +28,12 @@ class _loginPageState extends State<loginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: 500,
-                height: 100,
+                width: MediaQuery.of(context).size.width * 0.9,
+                height: MediaQuery.of(context).size.height * 0.1,
                 child: Image.asset('images/logoExtenso.png'),
               ),
               Container(
-                height: 10,
+                height: MediaQuery.of(context).size.height / 12,
               ),
               TextField(
                 onChanged: (text) {
@@ -42,7 +43,7 @@ class _loginPageState extends State<loginPage> {
                 decoration: InputDecoration(
                     labelText: 'Email', border: OutlineInputBorder()),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               TextField(
                 onChanged: (text) {
                   senha = text;
@@ -51,7 +52,7 @@ class _loginPageState extends State<loginPage> {
                 decoration: InputDecoration(
                     labelText: 'Senha', border: OutlineInputBorder()),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.015),
               ElevatedButton(
                 onPressed: () {
                   if (email == 'fjumisan@gmail.com' && senha == '123') {
